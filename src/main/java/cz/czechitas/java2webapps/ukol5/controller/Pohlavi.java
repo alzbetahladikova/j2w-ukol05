@@ -1,5 +1,5 @@
 package cz.czechitas.java2webapps.ukol5.controller;
 
-public enum PohlaviEnum {
-    DIVKA, CHLAPEC
+public enum Pohlavi {
+    DIVKA, CHLAPEC;
 }

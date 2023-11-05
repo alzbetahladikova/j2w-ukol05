@@ -1,7 +1,9 @@
 package cz.czechitas.java2webapps.ukol5.controller;
 
+import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public class RegistraceForm {
 
@@ -12,13 +14,21 @@ public class RegistraceForm {
     private String prijmeni;
     @NotBlank
     private String datumNarozeni;
-    @NotBlank
-    private PohlaviEnum pohlavi;
+
+    @NotNull
+    private Pohlavi pohlavi;
     @NotBlank
     private String turnus;
     @Email
     private String email;
     private String telefon;
+
+    @AssertTrue
+    private boolean podminky;
+    @AssertTrue
+    private boolean rad;
+
+
     public String getJmeno() {
         return jmeno;
     }
@@ -43,11 +53,11 @@ public class RegistraceForm {
         this.datumNarozeni = datumNarozeni;
     }
 
-    public PohlaviEnum getPohlavi() {
+    public Pohlavi getPohlavi() {
         return pohlavi;
     }
 
-    public void setPohlavi(PohlaviEnum pohlavi) {
+    public void setPohlavi(Pohlavi pohlavi) {
         this.pohlavi = pohlavi;
     }
 
@@ -75,5 +85,19 @@ public class RegistraceForm {
         this.telefon = telefon;
     }
 
+    public boolean isPodminky() {
+        return podminky;
+    }
 
+    public void setPodminky(boolean podminky) {
+        this.podminky = podminky;
+    }
+
+    public boolean isRad() {
+        return rad;
+    }
+
+    public void setRad(boolean rad) {
+        this.rad = rad;
+    }
 }
