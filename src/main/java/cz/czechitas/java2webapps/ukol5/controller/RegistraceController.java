@@ -41,8 +41,13 @@ public class RegistraceController {
 
     return new ModelAndView("/prihlaseno")
             .addObject("kod", Math.abs(random.nextInt()))
+            .addObject("jmeno", form.getJmeno())
+            .addObject("prijmeni", form.getPrijmeni())
+            .addObject("datumNarozeni", form.getDatumNarozeni())
+            .addObject("pohlavi", form.getPohlavi())
+            .addObject("turnus", form.getTurnus())
+            .addObject("telefon", form.getTelefon())
             .addObject("email", form.getEmail());
-  }
-
+      }
 
 }
