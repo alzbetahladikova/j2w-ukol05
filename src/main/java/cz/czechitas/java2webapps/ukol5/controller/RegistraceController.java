@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Random;
 
 /**
@@ -25,6 +27,13 @@ public class RegistraceController {
 
   @PostMapping("/")
   public Object form(@Valid @ModelAttribute("form") RegistraceForm form, BindingResult bindingResult) {
+
+    Period period = form.getDatumNarozeni().until(LocalDate.now());
+    int vek = period.getYears();
+    if (vek<9||vek>15){
+      return "/chyba-vek";
+
+    }
 
     if (bindingResult.hasErrors()) {
       return "/formular";

@@ -1,4 +1,5 @@
 [#ftl]
+[#import "/spring.ftl" as spring]
 <!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -11,15 +12,10 @@
 </head>
 <body>
     <main>
-        <h1>Registrace na letní dětský tábor</h1>
-        <h1>Přihláška</h1>
-        <div>Přihláška s číslem <strong>${kod}</strong> byla vytvořena.
-            [#if email??]
-                Na e-mail ${email} byla zaslána kopie přihlášky.
-            [/#if]
 
 
-        </div>
+            <h1>Tábor je pouze pro děti ve věku 9 až 15 let.</h1>
+
     </main>
 </body>
 </html>

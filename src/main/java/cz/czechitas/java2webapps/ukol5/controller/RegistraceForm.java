@@ -4,6 +4,9 @@ import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.time.LocalDate;
 
 public class RegistraceForm {
 
@@ -12,8 +15,9 @@ public class RegistraceForm {
     private String jmeno;
     @NotBlank
     private String prijmeni;
-    @NotBlank
-    private String datumNarozeni;
+
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
+    private LocalDate datumNarozeni;
 
     @NotNull
     private Pohlavi pohlavi;
@@ -45,11 +49,11 @@ public class RegistraceForm {
         this.prijmeni = prijmeni;
     }
 
-    public String getDatumNarozeni() {
+    public LocalDate getDatumNarozeni() {
         return datumNarozeni;
     }
 
-    public void setDatumNarozeni(String datumNarozeni) {
+    public void setDatumNarozeni(LocalDate datumNarozeni) {
         this.datumNarozeni = datumNarozeni;
     }
 
